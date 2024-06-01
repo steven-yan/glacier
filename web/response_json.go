@@ -12,6 +12,14 @@ type JSONResponse struct {
 	code     int
 }
 
+func (resp *JSONResponse) Response() ResponseCreator {
+	return resp.response
+}
+
+func (resp *JSONResponse) Original() interface{} {
+	return resp.original
+}
+
 func (resp *JSONResponse) Code() int {
 	return resp.code
 }
